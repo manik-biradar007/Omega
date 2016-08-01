@@ -230,11 +230,11 @@ header{
 	    height: 300px;
 	}
 }
-.card:hover{
+.process .card:hover{
 	transform: scale(1.1);
 	cursor: pointer;
 }
-.card:hover img{
+.process .card:hover img{
 	animation: bounce 1.5s infinite;
 }
 
