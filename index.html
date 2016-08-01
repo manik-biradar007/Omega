@@ -8,12 +8,32 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<!-- JS -->
-	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript" src="js/init.js"></script>
 
+	<!-- PreloaderScript -->
+	<script>
+		// makes sure the whole site is loaded
+		$(window).load(function() {
+			$("html, body").animate({ scrollTop: 0 }, 1);
+		    // will first fade out the loading animation
+		    $(".spinner-wrapper").fadeOut();
+		    // will fade out the whole DIV that covers the website.
+		    $("#preloader").delay(1000).fadeOut("slow"); //Change Here to increse loader time
+		})
+	</script>
+
+
 </head>
 <body>
+	<!-- CSS Preloader -->
+	<div id="preloader">
+		<p class="pre">Omega Solutions</p>
+	  	<div id="status">&nbsp;</div>
+	</div>
+	
+	<!-- Header -->
 	<header id="home">
 		<div class="container padd-top20">
 			<div class="menu">
@@ -73,39 +93,41 @@
 	                <div class="row">
 	                    <div class="col-xs-12" id="slider">
 	                        <!-- Top part of the slider -->
-	                        <div class="row white">
+	                        <div class="white">
 	                            <div class="col-sm-8" id="carousel-bounding-box">
-	                                <div class="carousel slide" id="myCarousel">
-	                                    <!-- Carousel items -->
-	                                    <div class="carousel-inner">
-	                                        <div class="active item" data-slide-number="0">
-	                                        <img src="images/tm1.jpg"></div>
+	                                <div class="row">
+	                                	<div class="carousel slide" id="myCarousel">
+		                                    <!-- Carousel items -->
+		                                    <div class="carousel-inner">
+		                                        <div class="active item" data-slide-number="0">
+		                                        <img src="images/tm1.jpg"></div>
 
-	                                        <div class="item" data-slide-number="1">
-	                                        <img src="images/tm2.jpg"></div>
+		                                        <div class="item" data-slide-number="1">
+		                                        <img src="images/tm2.jpg"></div>
 
-	                                        <div class="item" data-slide-number="2">
-	                                        <img src="images/tm3.jpg"></div>
+		                                        <div class="item" data-slide-number="2">
+		                                        <img src="images/tm3.jpg"></div>
 
-	                                        <div class="item" data-slide-number="3">
-	                                        <img src="images/tm1.jpg"></div>
+		                                        <div class="item" data-slide-number="3">
+		                                        <img src="images/tm1.jpg"></div>
 
-	                                        <div class="item" data-slide-number="4">
-	                                        <img src="images/tm2.jpg"></div>
+		                                        <div class="item" data-slide-number="4">
+		                                        <img src="images/tm2.jpg"></div>
 
-	                                        <div class="item" data-slide-number="5">
-	                                        <img src="images/tm3.jpg"></div>
-	                                    </div><!-- Carousel nav -->
-	                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-	                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
-	                                    </a>
-	                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-	                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
-	                                    </a>                                
-	                                    </div>
+		                                        <div class="item" data-slide-number="5">
+		                                        <img src="images/tm3.jpg"></div>
+		                                    </div><!-- Carousel nav -->
+		                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		                                        <span class="glyphicon glyphicon-chevron-left"></span>                                       
+		                                    </a>
+		                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		                                        <span class="glyphicon glyphicon-chevron-right"></span>                                       
+		                                    </a> 		                                                                  
+		                                 </div>
+	                                 </div>
 	                            </div>
 
-	                            <div class="col-sm-4" id="carousel-text"></div>
+	                            <div class="col-sm-4" id="carousel-text"></div>                           
 
 	                            <div id="slide-content" style="display: none;">
 	                                <div id="slide-content-0">
@@ -143,7 +165,9 @@
 	                                    <p class="fw3">We develop On Demand Platforms for entrepreneur and enterprise level initiatives that are disrupting industry value chains across different verticals</p>
 	                                    <div class="sub-btn">READ MORE</div>
 	                                </div>
+
 	                            </div>
+	                            <div class="clearfix"></div>
 	                        </div>
 	                    </div>
 	                </div><!--/Slider-->
@@ -289,7 +313,24 @@ years, here are our hand-picks</h4>
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog modal-lg">
 				<div class="modalContent">
-					.<div class="card"></div>	
+					<div class="card">
+						<h2 class="fw3">Let's create something together!</h2><p> </p>
+						<div class="col-md-6">
+							<img src="images/map.jpg" alt="map.jpg">
+						</div>				
+						<form class="form-horizontal">
+							<!-- Text input-->
+							<div class="form-group col-md-6 col-xs-12 text-left">
+								<p>Send us a message</p>
+								<input type="text" placeholder="Name*" class="form-control input-md">
+								<input type="text" placeholder="Email*" class="form-control input-md">
+								<input type="text" placeholder="Phone" class="form-control input-md">
+								<textarea class="form-control" rows="5"	 placeholder="Comment"></textarea>
+								<button class="btn btn-primary btn-block">SUBMIT</button>
+							</div>
+							<div class="clearfix"></div>
+						</form>
+					</div>	
 				</div>
 			</div>
 		</div>
@@ -301,7 +342,7 @@ years, here are our hand-picks</h4>
 			<div class="col-sm-4">
 				<div class="about">
 					<h3 class="white-txt">About Us</h3>
-					<p class="white-txt fw3 ">Our extensive experience in the mobile world enables us to develop and deliver breakthrough mobile solutions in various verticals including Enterprise,Navigation, Health Care, Wearable Technology,Augmented Reality, Games, Consumer, Media, Finance etc.</p>
+					<p class="white-txt fw3 ">Our extensive experience in the mobile world enables us to develop and deliver breakthrough mobile solutions in various verticals including Enterprise,Navigation, Health Care, Wearable Technology, Augmented Reality, Games, Consumer, Media, Finance etc.</p>
 				</div>
 			</div>
 			<div class="col-sm-1"></div>
@@ -345,6 +386,5 @@ years, here are our hand-picks</h4>
 
 		</div>
 	</footer>
-
 </body>
 </html>

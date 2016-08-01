@@ -125,12 +125,37 @@ header{
 	border: 1px solid #023050;
 	cursor: pointer;
 	transition: all .3s;
+    margin-bottom: 5px;
 }
 .sub-btn:hover{
 	background-color: #023050;
 	color: white;
 }
+#main_area p{
+    height: 120px;
+    overflow-x: auto; 
+}
+.indicat{
 
+}
+.indicat .carousel-indicators li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #468fcc;
+    border-radius: 10px;
+}
+.indicat .carousel-indicators .active {
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    background-color: #468fcc;
+}
 
 /* Work Section */
 .work, .explore{
@@ -217,7 +242,7 @@ header{
 	margin-top: 30px; 
 	transition: all .3s;
 }
-.card img{
+.processCard  .card img{
 	margin: 30px 0;
 	width: 100px;
 }
@@ -342,13 +367,69 @@ nav a {
 .menu {
      transition: all .3s;
 }
-.addM  .menu {
-	position: fixed;
+.addM .menu {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     padding: 10px 10%;
     z-index: 1;
-    background-color: rgba(91,157,207,.95);
-	transition: all .3s;
+    background-color: #468fcc;
+    transition: all .3s;
+}
+
+@keyframes sk-rotateplane {
+    o%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#status {
+    width: 100px;
+    height: 100px;
+    background: url(../images/shape.svg) no-repeat;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    animation: sk-rotateplane 1.2s linear infinite;
+    right: 0;
+    margin: auto;
+}
+
+
+#preloader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fefefe;
+    z-index: 99;
+    height: 100%;
+}
+.pre  {
+    top: 39%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    font-weight: 300;
+    font-size: 32px;
+}
+
+/* Modal */
+.modalContent .form-group > *{
+    margin: 15px 0;
+}
+.modalContent .card img{
+        width: 100%;
+        max-width: 493px;
+}
+.modal-dialog {
+    margin: 5% auto;
 }
