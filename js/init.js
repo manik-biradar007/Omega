@@ -33,7 +33,18 @@ $(window).scroll(function() {
     var scrolledY = $(window).scrollTop();
     console.log(scrolledY);
     if (scrolledY>=700)
-        {$("header > div").addClass("addM");}
+        {
+            $("header > div").addClass("addM");
+             $('.return-to-top').fadeIn(200);
+        }
         else 
-        {$("header > div").removeClass("addM");}
+        {
+            $("header > div").removeClass("addM");
+            $('.return-to-top').fadeOut(200);
+        }
 });
+
+function move(){
+     console.log("click");
+    $('body,html').animate({scrollTop : 0}, 500);
+}
